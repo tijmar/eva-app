@@ -67,12 +67,12 @@ function Card({ dilemma, onSwipe, zIndex, offset }) {
         display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
         border: '1.5px solid rgba(220,180,210,0.4)',
       }}>
-        <div style={{ background: `linear-gradient(135deg, #8820f9, #6600cc)`, padding: '18px 24px 14px', marginBottom: 18, position: 'relative', overflow: 'hidden' }}>
-          <div style={{ position: 'absolute', top: -20, right: -20, pointerEvents: 'none' }}><FloralDeco color="#fff" size={100} opacity={0.2} /></div>
-          <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.85)' }}>DILEMMA VAN EEN EVA</span>
+        <div style={{ background: `linear-gradient(135deg, #f3eaff, #e8d5ff)`, padding: '14px 24px 10px', marginBottom: 0, position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: -20, right: -20, pointerEvents: 'none' }}><FloralDeco color="#8820f9" size={100} opacity={0.12} /></div>
+          <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.18em', color: '#8820f9' }}>DILEMMA VAN EEN EVA</span>
         </div>
-        <div style={{ padding: '0 26px', flex: 1 }}>
-          <p style={{ fontFamily: "'Caveat', cursive", fontSize: 26, lineHeight: 1.4, color: '#252525', margin: 0, fontWeight: 700 }}>"{dilemma.stelling}"</p>
+        <div style={{ padding: '22px 26px', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <p style={{ fontFamily: "'Nunito Sans', sans-serif", fontSize: 22, lineHeight: 1.45, color: '#252525', margin: 0, fontWeight: 800, textAlign: 'center' }}>"{dilemma.stelling}"</p>
         </div>
         <div style={{ padding: '18px 26px 0', display: 'flex', justifyContent: 'space-between' }}>
           <span style={{ fontSize: 12, color: '#DCA0C0', fontWeight: 600 }}>← niet ik</span>
@@ -221,7 +221,7 @@ export default function EvaTinder() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #F5EEF8 0%, #FDE8F0 50%, #EEF0FA 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>
-      <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
       <div style={{ width: '100%', maxWidth: 375, background: 'linear-gradient(180deg, #FFF8FC 0%, #FAF5FF 100%)', borderRadius: 48, boxShadow: '0 40px 100px rgba(180,100,180,0.2), 0 0 0 1px rgba(210,170,220,0.4)', overflow: 'hidden', display: 'flex', flexDirection: 'column', maxHeight: '95vh', overflowY: 'auto' }}>
 
         <div style={{ background: 'linear-gradient(135deg, #8820f9 0%, #ccb3ff 100%)', padding: '20px 26px 18px', position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
