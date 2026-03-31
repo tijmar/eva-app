@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { supabase } from '../lib/supabase.js'
+import { X, Check, Zap, MessageCircle, Send, Plus, ChevronDown, ChevronUp, BookOpen, ArrowRight } from 'lucide-react'
 
 const dilemmas = [
   { id: 1, stelling: "Mijn geloof is meer gewoonte dan overtuiging.", kleur: "#C9A0DC", artikel: { titel: "Is geloof zonder twijfel eigenlijk wel geloof?", tijd: "6 min", url: "https://www.eo.nl/artikel/geloofstwijfel-ik-weet-helemaal-niet-zeker-of-god-bestaat" }, summary: "Veel theologen zeggen: twijfel is geen tegenstelling van geloof, het is er onderdeel van. Luther twijfelde. Moeder Teresa twijfelde decennialang. Jij bent in goed gezelschap." },
@@ -125,7 +126,7 @@ function CommentsSection({ dilemmaId, accentKleur }) {
   return (
     <div style={{ background: '#fff', borderRadius: 22, overflow: 'hidden', boxShadow: '0 2px 16px rgba(180,100,160,0.07)' }}>
       <div style={{ padding: '14px 20px 12px', borderBottom: '1px solid rgba(220,180,210,0.2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontSize: 11, color: '#C4A0C0', fontWeight: 800, letterSpacing: '0.14em' }}>💬 WAT ANDERE EVA'S ZEGGEN</span>
+        <span style={{ fontSize: 11, color: '#C4A0C0', fontWeight: 800, letterSpacing: '0.14em', display: 'flex', alignItems: 'center', gap: 5 }}><MessageCircle size={13} strokeWidth={2.5} />WAT ANDERE EVA'S ZEGGEN</span>
         <span style={{ fontSize: 11, color: '#D0B0D8', fontWeight: 600 }}>{comments.length} reacties</span>
       </div>
       <div style={{ padding: '10px 0' }}>
@@ -143,7 +144,7 @@ function CommentsSection({ dilemmaId, accentKleur }) {
         ))}
         {comments.length > 3 && (
           <button onClick={() => setShowAll(!showAll)} style={{ width: '100%', padding: '10px 0', background: 'none', border: 'none', color: '#B090C8', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>
-            {showAll ? 'Minder tonen ↑' : `Nog ${comments.length - 3} reacties tonen ↓`}
+            <span style={{ display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'center' }}>{showAll ? <><ChevronUp size={14} />Minder tonen</> : <><ChevronDown size={14} />Nog {comments.length - 3} reacties tonen</>}</span>
           </button>
         )}
       </div>
@@ -161,7 +162,7 @@ function CommentsSection({ dilemmaId, accentKleur }) {
             </div>
           </div>
           <button onClick={post} disabled={!input.trim() || posted} style={{ width: 40, height: 40, borderRadius: '50%', border: 'none', background: input.trim() && !posted ? `linear-gradient(135deg, ${accentKleur}, #9B72CF)` : 'rgba(220,200,230,0.4)', color: '#fff', fontSize: 16, cursor: input.trim() ? 'pointer' : 'default', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s ease', flexShrink: 0, marginBottom: 20 }}>
-            {posted ? '✓' : '↑'}
+            {posted ? <Check size={16} strokeWidth={2.5} /> : <Send size={15} strokeWidth={2.5} />}
           </button>
         </div>
         {posted && <p style={{ margin: '4px 0 0', fontSize: 11, color: '#B090C8', textAlign: 'center' }}>✓ Anoniem geplaatst 🌸</p>}
@@ -234,7 +235,7 @@ export default function EvaTinder() {
               </svg>
               <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.65)', fontWeight: 700, letterSpacing: '0.18em' }}>DILEMMA'S</span>
             </div>
-            <button onClick={() => { setShowInstuur(!showInstuur); setShowResult(false) }} style={{ background: 'rgba(255,255,255,0.22)', border: '1.5px solid rgba(255,255,255,0.4)', borderRadius: 20, padding: '7px 16px', color: '#fff', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>+ Insturen</button>
+            <button onClick={() => { setShowInstuur(!showInstuur); setShowResult(false) }} style={{ background: 'rgba(255,255,255,0.22)', border: '1.5px solid rgba(255,255,255,0.4)', borderRadius: 20, padding: '7px 16px', color: '#fff', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", display: 'flex', alignItems: 'center', gap: 5 }}><Plus size={13} strokeWidth={2.5} />Insturen</button>
           </div>
           <p style={{ margin: '8px 0 0', fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Herken jij dit? Swipe eerlijk. 🌸</p>
         </div>
@@ -259,8 +260,8 @@ export default function EvaTinder() {
                   ))}
                 </div>
                 <div style={{ display: 'flex', gap: 20, justifyContent: 'center', marginBottom: 16 }}>
-                  <button onClick={() => handleSwipe('nope')} style={{ width: 64, height: 64, borderRadius: '50%', border: '2.5px solid #E8A0B8', background: 'linear-gradient(135deg, #FFF0F5, #FFE4EE)', fontSize: 22, cursor: 'pointer', boxShadow: '0 4px 20px rgba(220,120,154,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4789A', fontWeight: 800 }}>✗</button>
-                  <button onClick={() => handleSwipe('raak')} style={{ width: 64, height: 64, borderRadius: '50%', border: '2.5px solid #C4A8DC', background: 'linear-gradient(135deg, #F8F0FF, #F0E4FF)', fontSize: 22, cursor: 'pointer', boxShadow: '0 4px 20px rgba(160,120,200,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9B72CF', fontWeight: 800 }}>✓</button>
+                  <button onClick={() => handleSwipe('nope')} style={{ width: 64, height: 64, borderRadius: '50%', border: '2.5px solid #E8A0B8', background: 'linear-gradient(135deg, #FFF0F5, #FFE4EE)', cursor: 'pointer', boxShadow: '0 4px 20px rgba(220,120,154,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4789A' }}><X size={26} strokeWidth={2.5} /></button>
+                  <button onClick={() => handleSwipe('raak')} style={{ width: 64, height: 64, borderRadius: '50%', border: '2.5px solid #C4A8DC', background: 'linear-gradient(135deg, #F8F0FF, #F0E4FF)', cursor: 'pointer', boxShadow: '0 4px 20px rgba(160,120,200,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8820f9' }}><Check size={26} strokeWidth={2.5} /></button>
                 </div>
                 <p style={{ textAlign: 'center', margin: 0, fontSize: 12, color: '#C4A0C0' }}>
                   <span style={{ color: '#D4789A', fontWeight: 700 }}>✗ niet ik</span>{' · '}
@@ -303,14 +304,14 @@ export default function EvaTinder() {
                 <p style={{ margin: '0 0 4px', fontSize: 10, color: 'rgba(255,255,255,0.6)', fontWeight: 700, letterSpacing: '0.14em' }}>HIER GAAT EEN ARTIKEL OVER</p>
                 <p style={{ margin: '0 0 16px', fontSize: 15, color: '#fff', lineHeight: 1.4, fontWeight: 600 }}>{lastSwipe.dilemma.artikel.titel}</p>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <button onClick={() => lastSwipe.dilemma.artikel.url && window.open(lastSwipe.dilemma.artikel.url, '_blank')} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: 'none', background: '#fff', color: '#7A52A8', fontSize: 13, fontWeight: 700, cursor: lastSwipe.dilemma.artikel.url ? 'pointer' : 'default', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", opacity: lastSwipe.dilemma.artikel.url ? 1 : 0.5 }}>Lees ({lastSwipe.dilemma.artikel.tijd})</button>
-                  <button onClick={() => setShowSummary(!showSummary)} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: '2px solid rgba(255,255,255,0.4)', background: 'transparent', color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>⚡ 60 sec versie</button>
+                  <button onClick={() => lastSwipe.dilemma.artikel.url && window.open(lastSwipe.dilemma.artikel.url, '_blank')} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: 'none', background: '#fff', color: '#8820f9', fontSize: 13, fontWeight: 700, cursor: lastSwipe.dilemma.artikel.url ? 'pointer' : 'default', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", opacity: lastSwipe.dilemma.artikel.url ? 1 : 0.5, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}><BookOpen size={14} strokeWidth={2.5} />Lees ({lastSwipe.dilemma.artikel.tijd})</button>
+                  <button onClick={() => setShowSummary(!showSummary)} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: '2px solid rgba(255,255,255,0.4)', background: 'transparent', color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}><Zap size={14} strokeWidth={2.5} />60 sec versie</button>
                 </div>
                 {showSummary && <div style={{ marginTop: 12, padding: '14px', background: 'rgba(255,255,255,0.15)', borderRadius: 14 }}><p style={{ margin: 0, fontSize: 13, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>{lastSwipe.dilemma.summary}</p></div>}
               </div>
 
-              <button onClick={volgende} style={{ width: '100%', padding: '15px', borderRadius: 18, border: 'none', background: 'linear-gradient(135deg, #8820f9, #ccb3ff)', color: '#fff', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", boxShadow: '0 6px 24px rgba(160,100,200,0.3)' }}>
-                Volgend dilemma 🌸
+              <button onClick={volgende} style={{ width: '100%', padding: '15px', borderRadius: 18, border: 'none', background: 'linear-gradient(135deg, #8820f9, #ccb3ff)', color: '#fff', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", boxShadow: '0 6px 24px rgba(136,32,249,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+                Volgend dilemma <ArrowRight size={16} strokeWidth={2.5} />
               </button>
             </div>
           )}
