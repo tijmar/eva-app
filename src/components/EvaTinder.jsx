@@ -78,10 +78,10 @@ function Card({ dilemma, onSwipe, zIndex, offset }) {
           <span style={{ fontSize: 12, color: '#A090C8', fontWeight: 600 }}>dit ben ik →</span>
         </div>
         <div style={{ position: 'absolute', top: 70, left: 18, border: '3.5px solid #9B6BB5', borderRadius: 10, padding: '5px 14px', transform: 'rotate(-14deg)', opacity: raakOpacity, pointerEvents: 'none', background: 'rgba(255,255,255,0.92)' }}>
-          <span style={{ color: '#9B6BB5', fontWeight: 900, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>DIT BEN IK</span>
+          <span style={{ color: '#9B6BB5', fontWeight: 900, fontSize: 18, fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>DIT BEN IK</span>
         </div>
         <div style={{ position: 'absolute', top: 70, right: 18, border: '3.5px solid #D4789A', borderRadius: 10, padding: '5px 14px', transform: 'rotate(14deg)', opacity: nopeOpacity, pointerEvents: 'none', background: 'rgba(255,255,255,0.92)' }}>
-          <span style={{ color: '#D4789A', fontWeight: 900, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>NIET IK</span>
+          <span style={{ color: '#D4789A', fontWeight: 900, fontSize: 18, fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>NIET IK</span>
         </div>
       </div>
     </div>
@@ -142,7 +142,7 @@ function CommentsSection({ dilemmaId, accentKleur }) {
           </div>
         ))}
         {comments.length > 3 && (
-          <button onClick={() => setShowAll(!showAll)} style={{ width: '100%', padding: '10px 0', background: 'none', border: 'none', color: '#B090C8', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans', sans-serif" }}>
+          <button onClick={() => setShowAll(!showAll)} style={{ width: '100%', padding: '10px 0', background: 'none', border: 'none', color: '#B090C8', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>
             {showAll ? 'Minder tonen ↑' : `Nog ${comments.length - 3} reacties tonen ↓`}
           </button>
         )}
@@ -154,7 +154,7 @@ function CommentsSection({ dilemmaId, accentKleur }) {
               placeholder="Reageer anoniem... (max 60 tekens)"
               value={input} onChange={e => e.target.value.length <= MAX_CHARS && setInput(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && post()}
-              style={{ width: '100%', border: `1.5px solid ${input ? accentKleur + '88' : 'rgba(220,180,210,0.4)'}`, borderRadius: 20, padding: '10px 14px', fontSize: 13, color: '#3A1A3A', fontFamily: "'DM Sans', sans-serif", outline: 'none', background: '#fff', boxSizing: 'border-box', transition: 'border-color 0.2s ease' }}
+              style={{ width: '100%', border: `1.5px solid ${input ? accentKleur + '88' : 'rgba(220,180,210,0.4)'}`, borderRadius: 20, padding: '10px 14px', fontSize: 13, color: '#3A1A3A', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", outline: 'none', background: '#fff', boxSizing: 'border-box', transition: 'border-color 0.2s ease' }}
             />
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
               <span style={{ fontSize: 10, fontWeight: 600, color: remaining < 10 ? '#D4789A' : '#D0B8D8' }}>{remaining} tekens</span>
@@ -219,18 +219,22 @@ export default function EvaTinder() {
   const jijRaak = lastSwipe?.dir === 'raak'
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #F5EEF8 0%, #FDE8F0 50%, #EEF0FA 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #F5EEF8 0%, #FDE8F0 50%, #EEF0FA 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       <div style={{ width: '100%', maxWidth: 375, background: 'linear-gradient(180deg, #FFF8FC 0%, #FAF5FF 100%)', borderRadius: 48, boxShadow: '0 40px 100px rgba(180,100,180,0.2), 0 0 0 1px rgba(210,170,220,0.4)', overflow: 'hidden', display: 'flex', flexDirection: 'column', maxHeight: '95vh', overflowY: 'auto' }}>
 
-        <div style={{ background: 'linear-gradient(135deg, #C084B8 0%, #9B72CF 100%)', padding: '20px 26px 18px', position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
+        <div style={{ background: 'linear-gradient(135deg, #8820f9 0%, #ccb3ff 100%)', padding: '20px 26px 18px', position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
           <div style={{ position: 'absolute', top: -30, right: -30, pointerEvents: 'none' }}><FloralDeco color="#fff" size={130} opacity={0.15} /></div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 600, color: '#fff', letterSpacing: '-0.02em' }}>Eva</span>
-              <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.65)', fontWeight: 700, letterSpacing: '0.18em', marginLeft: 10, verticalAlign: 'middle' }}>DILEMMA'S</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <svg viewBox="0 0 405 169" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eva" style={{ height: 28, width: 'auto' }}>
+                <path fill="#fff" d="M357.84,128.856c-9.781,1.725-18.411,2.588-25.89,2.588c-12.657,0-18.699-4.888-18.699-15.821 c0-15.246,11.507-21.574,44.589-24.164V128.856z M384.303,29.9c-6.04-11.793-19.272-17.835-39.697-17.835 c-18.985,0-38.324,5.05-57.021,15.118c0,0,0.986,3.118,2.941,8.716c4.378,12.536,12.046,15.491,19.886,12.096 c9.596-4.155,17.262-6.843,26.716-6.843c15.245,0,20.135,3.994,20.135,19.528v5.178l-2.877,0.287 c-24.163,2.589-35.668,5.178-48.039,11.219c-16.109,7.766-24.163,21.286-24.163,40.272c0,27.616,14.672,39.698,47.464,39.698 c15.822,0,35.096-1.726,59.259-5.179V63.268C388.907,44.858,387.755,36.516,384.303,29.9"/>
+                <path fill="#fff" d="M74.985,41.965c-17.197,0-28.308,12.173-29.896,28.049h59.525C103.821,53.082,91.652,41.964,74.985,41.965 M74.456,12.065 c38.859,0,62.494,23.497,66.562,61.605c0.419,3.922,0.367,20.159,0.367,20.159H44.028c0.793,18.522,15.609,31.752,35.98,31.752 c9.569,0.129,18.88-3.102,26.313-9.13c4.999-4.049,12.118-4.156,17.236-0.258l14.132,10.71c-5.291,9.791-23.81,30.431-58.202,30.431 c-44.451,0-72.758-30.696-72.758-72.239C6.729,43.291,35.036,12.065,74.456,12.065"/>
+                <polygon fill="#fff" points="140.401,15.503 177.085,15.503 210.302,115.001 243.525,15.503 280.209,15.503 231.467,153.892 189.138,153.892"/>
+              </svg>
+              <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.65)', fontWeight: 700, letterSpacing: '0.18em' }}>DILEMMA'S</span>
             </div>
-            <button onClick={() => { setShowInstuur(!showInstuur); setShowResult(false) }} style={{ background: 'rgba(255,255,255,0.22)', border: '1.5px solid rgba(255,255,255,0.4)', borderRadius: 20, padding: '7px 16px', color: '#fff', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans', sans-serif" }}>+ Insturen</button>
+            <button onClick={() => { setShowInstuur(!showInstuur); setShowResult(false) }} style={{ background: 'rgba(255,255,255,0.22)', border: '1.5px solid rgba(255,255,255,0.4)', borderRadius: 20, padding: '7px 16px', color: '#fff', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>+ Insturen</button>
           </div>
           <p style={{ margin: '8px 0 0', fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Herken jij dit? Swipe eerlijk. 🌸</p>
         </div>
@@ -238,8 +242,8 @@ export default function EvaTinder() {
         {showInstuur && (
           <div style={{ background: 'linear-gradient(135deg, #F8EEF8, #F0EAF8)', padding: '18px 24px 20px', borderBottom: '1px solid rgba(200,160,210,0.2)', flexShrink: 0 }}>
             <p style={{ margin: '0 0 10px', fontSize: 11, color: '#B080C0', fontWeight: 700, letterSpacing: '0.12em' }}>JOUW ANONIEME DILEMMA</p>
-            <textarea placeholder="Schrijf hier iets wat je nooit hardop zegt..." value={inputText} onChange={e => setInputText(e.target.value)} style={{ width: '100%', minHeight: 80, background: '#fff', border: '1.5px solid rgba(200,160,210,0.4)', borderRadius: 16, padding: '12px 14px', color: '#3A1A3A', fontSize: 14, lineHeight: 1.5, fontFamily: "'DM Sans', sans-serif", resize: 'none', outline: 'none', boxSizing: 'border-box' }} />
-            <button onClick={instuur} style={{ marginTop: 10, width: '100%', padding: '13px', borderRadius: 16, border: 'none', background: verstuurd ? 'linear-gradient(135deg, #A8D8A8, #80C8A0)' : 'linear-gradient(135deg, #C084B8, #9B72CF)', color: '#fff', fontWeight: 800, fontSize: 14, cursor: 'pointer', fontFamily: "'DM Sans', sans-serif" }}>
+            <textarea placeholder="Schrijf hier iets wat je nooit hardop zegt..." value={inputText} onChange={e => setInputText(e.target.value)} style={{ width: '100%', minHeight: 80, background: '#fff', border: '1.5px solid rgba(200,160,210,0.4)', borderRadius: 16, padding: '12px 14px', color: '#3A1A3A', fontSize: 14, lineHeight: 1.5, fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", resize: 'none', outline: 'none', boxSizing: 'border-box' }} />
+            <button onClick={instuur} style={{ marginTop: 10, width: '100%', padding: '13px', borderRadius: 16, border: 'none', background: verstuurd ? 'linear-gradient(135deg, #A8D8A8, #80C8A0)' : 'linear-gradient(135deg, #8820f9, #ccb3ff)', color: '#fff', fontWeight: 800, fontSize: 14, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>
               {verstuurd ? '✓ Anoniem verstuurd — dank je lief' : 'Anoniem insturen →'}
             </button>
           </div>
@@ -283,7 +287,7 @@ export default function EvaTinder() {
               <div style={{ background: '#fff', borderRadius: 20, padding: '16px 20px', boxShadow: '0 2px 12px rgba(180,100,160,0.06)' }}>
                 <p style={{ margin: '0 0 6px', fontSize: 10, color: '#C4A0C0', fontWeight: 700, letterSpacing: '0.14em' }}>HOE ANDERE EVA'S STEMDEN {totalVotes > 0 && `(${totalVotes} stemmen)`}</p>
                 <div style={{ display: 'flex', height: 12, borderRadius: 99, overflow: 'hidden', marginBottom: 10 }}>
-                  <div style={{ width: `${pctRaak}%`, background: 'linear-gradient(90deg, #9B72CF, #C084B8)', transition: 'width 1s ease' }} />
+                  <div style={{ width: `${pctRaak}%`, background: 'linear-gradient(90deg, #8820f9, #ccb3ff)', transition: 'width 1s ease' }} />
                   <div style={{ flex: 1, background: 'linear-gradient(90deg, #E8A0B8, #F0C0D0)' }} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -294,18 +298,18 @@ export default function EvaTinder() {
 
               <CommentsSection dilemmaId={lastSwipe.dilemma.id} accentKleur={accentKleur} />
 
-              <div style={{ background: 'linear-gradient(135deg, #9B72CF, #C084B8)', borderRadius: 22, padding: '18px 20px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ background: 'linear-gradient(135deg, #8820f9, #ccb3ff)', borderRadius: 22, padding: '18px 20px', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: -20, right: -20, pointerEvents: 'none' }}><FloralDeco color="#fff" size={100} opacity={0.12} /></div>
                 <p style={{ margin: '0 0 4px', fontSize: 10, color: 'rgba(255,255,255,0.6)', fontWeight: 700, letterSpacing: '0.14em' }}>HIER GAAT EEN ARTIKEL OVER</p>
                 <p style={{ margin: '0 0 16px', fontSize: 15, color: '#fff', lineHeight: 1.4, fontWeight: 600 }}>{lastSwipe.dilemma.artikel.titel}</p>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <button onClick={() => lastSwipe.dilemma.artikel.url && window.open(lastSwipe.dilemma.artikel.url, '_blank')} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: 'none', background: '#fff', color: '#7A52A8', fontSize: 13, fontWeight: 700, cursor: lastSwipe.dilemma.artikel.url ? 'pointer' : 'default', fontFamily: "'DM Sans', sans-serif", opacity: lastSwipe.dilemma.artikel.url ? 1 : 0.5 }}>Lees ({lastSwipe.dilemma.artikel.tijd})</button>
-                  <button onClick={() => setShowSummary(!showSummary)} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: '2px solid rgba(255,255,255,0.4)', background: 'transparent', color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans', sans-serif" }}>⚡ 60 sec versie</button>
+                  <button onClick={() => lastSwipe.dilemma.artikel.url && window.open(lastSwipe.dilemma.artikel.url, '_blank')} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: 'none', background: '#fff', color: '#7A52A8', fontSize: 13, fontWeight: 700, cursor: lastSwipe.dilemma.artikel.url ? 'pointer' : 'default', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", opacity: lastSwipe.dilemma.artikel.url ? 1 : 0.5 }}>Lees ({lastSwipe.dilemma.artikel.tijd})</button>
+                  <button onClick={() => setShowSummary(!showSummary)} style={{ flex: 1, padding: '12px 0', borderRadius: 14, border: '2px solid rgba(255,255,255,0.4)', background: 'transparent', color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif" }}>⚡ 60 sec versie</button>
                 </div>
                 {showSummary && <div style={{ marginTop: 12, padding: '14px', background: 'rgba(255,255,255,0.15)', borderRadius: 14 }}><p style={{ margin: 0, fontSize: 13, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>{lastSwipe.dilemma.summary}</p></div>}
               </div>
 
-              <button onClick={volgende} style={{ width: '100%', padding: '15px', borderRadius: 18, border: 'none', background: 'linear-gradient(135deg, #C084B8, #9B72CF)', color: '#fff', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: "'DM Sans', sans-serif", boxShadow: '0 6px 24px rgba(160,100,200,0.3)' }}>
+              <button onClick={volgende} style={{ width: '100%', padding: '15px', borderRadius: 18, border: 'none', background: 'linear-gradient(135deg, #8820f9, #ccb3ff)', color: '#fff', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: "'Euclid Circular A', 'Avenir Next', Avenir, sans-serif", boxShadow: '0 6px 24px rgba(160,100,200,0.3)' }}>
                 Volgend dilemma 🌸
               </button>
             </div>
